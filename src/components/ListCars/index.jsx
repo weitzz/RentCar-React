@@ -9,7 +9,7 @@ import {ParagraphSection,TitleSection,TitleCard,ParagraphCard,Span,Small,Section
 
 
 
-const ListCars = (props) => {
+const ListCars = ({props,children}) => {
    const value = useContext(DataContext)
    const [cars,setCars] = value.cars
    const [filterCars,setFilterCars] = useState('')
@@ -48,7 +48,7 @@ const ListCars = (props) => {
             .map(cars =>{
 
               return(
-                <CardItem key={cars.id}>
+                <CardItem key={cars.id} cars={cars}>
                   <ContainerText>
                   <TitleCard>{cars.brand}</TitleCard>
                   <ParagraphCard>{cars.name}</ParagraphCard>

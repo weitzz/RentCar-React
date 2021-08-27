@@ -26,7 +26,7 @@ export const ContentFooterLinks = styled.div`
 `;
 
 export const FooterCompany = styled.div`
-    color: ${LightColor};
+     color: ${textColor};
     height: 100%;
     min-height: 100px;
     h3{
@@ -74,6 +74,7 @@ export const SocialIcons = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 `;
 
 export const Facebook = styled(FaFacebook)`

@@ -56,7 +56,7 @@ export const CardItem = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     position: relative;
     transition: transform 0.2s;
 
@@ -69,22 +69,18 @@ export const CardItem = styled.div`
 export const ContainerText = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     width: 90%;
     text-align: left;
-    position: absolute;
-    top: 8%;
-    left: 8%;
+    margin-top: -30px;
 
 
 `;
 
 export const ImgContent  = styled.div`
-    width: 100%;
+    width: 90%;
     height: 200px;
-    margin-top: 5%;
-
 `;
 
 export const Img = styled.img`
@@ -98,14 +94,10 @@ export const CardContent = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 80%;
+    width: 90%;
     text-align: left;
     position: absolute;
-    bottom: 21%;
-    left: 10%;
-
-    
-
+    bottom: 5%;
 `;
 
 
