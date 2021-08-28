@@ -22,7 +22,7 @@ import {
 } from "../../components/Text/index";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
-import { BtnLogin } from "../../components/Button";
+import Button from "../../components/Button";
 import { useParams } from "react-router-dom";
 import { DataContext } from "../../context/DataProvider";
 const Reservation = () => {
@@ -147,7 +147,7 @@ const Reservation = () => {
               />
             </div>
             <TitleSection>Total: R$ {countPay * 250},00</TitleSection>
-            <BtnLogin>Pagar</BtnLogin>
+            <Button>Pagar</Button>
           </FormPayment>
         </ContainerPayments>
       </Container>

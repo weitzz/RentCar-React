@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { Nav, Logo, NavContainer, NavItem, NavLinks } from "./NavbarElements";
-import { Button } from "../Button";
+import  Button  from "../Button";
 import { HiMenuAlt1 } from "react-icons/hi";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+
+  const styleIcon = {
+    zIndex: "1000",
+    cursor: 'pointer'
+  }
   return (
     <Nav>
       <Logo>
@@ -12,10 +17,10 @@ const Navbar = () => {
       </Logo>
       <div>
         <HiMenuAlt1
-          size={"2.2rem"}
+          size={"2.4rem"}
           open={open}
           onClick={() => setOpen(!open)}
-          style={{ zIndex: "1000" }}
+          style={styleIcon }
         />
       </div>
       <NavContainer open={open}>
@@ -29,7 +34,7 @@ const Navbar = () => {
           <NavLinks to="">Sobre nós</NavLinks>
         </NavItem>
         <NavItem>
-          <Button to="/login">Login</Button>
+          <Button to="/login" variant='primary' >Login</Button>
         </NavItem>
       </NavContainer>
     </Nav>

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import {LightColor,primaryDarkColor} from '../../style/Colors'
-
+import { motion } from 'framer-motion';
 
 
 
@@ -49,7 +49,7 @@ export const CardWrapper = styled.div`
    
 `;
 
-export const CardItem = styled.div`
+export const CardItem = styled(motion.div)`
     height: 400px;
     background: ${primaryDarkColor};
     border-radius: 8px;

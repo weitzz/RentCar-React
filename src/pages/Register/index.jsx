@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFormik } from 'formik';
 import {LinkRouter,IconArrowLeft} from '../Login/style'
-import { BtnLogin } from '../../components/Button'
+import Button  from '../../components/Button'
 import {LinkPassword,TitleForm} from '../Login/style'
 import {WrapperInputs,LinksContainer,Container} from './style'
 import {TitleSection} from '../../components/Text'
@@ -76,7 +76,7 @@ const Register = () => {
                  onChange={formik.handleChange}
                   value={formik.values.userPassword}
                  />
-                <BtnLogin>Salvar</BtnLogin>
+                <Button>Salvar</Button>
             </WrapperInputs>
             <LinksContainer>
            <LinkPassword to='/resetpassword'>Esqueceu sua senha ?</LinkPassword> 

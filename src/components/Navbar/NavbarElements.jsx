@@ -44,6 +44,7 @@ export const NavContainer = styled.ul`
   @media (max-width: 768px) {
     flex-flow: column nowrap;
     align-items: center;
+    justify-content: center;
     background-color: ${primaryDarkColor};
     position: fixed;
     width: 100%;
@@ -78,6 +79,7 @@ export const NavLinks = styled(LinkS)`
   transition: color 0.8s ease;
   @media (max-width: 768px) {
     align-items: center;
+    font-size: 1.5em;
   }
 
   &:hover {

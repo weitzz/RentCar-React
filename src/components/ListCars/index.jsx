@@ -1,8 +1,8 @@
-import React,{useState, useEffect,useContext} from 'react'
+import React,{useState,useContext} from 'react'
 import { DataContext } from '../../context/DataProvider'
-
+import { motion } from "framer-motion"
 import {CatalogContent,FilterCard,Input,CardWrapper,CardItem,Img,CardContent,ImgContent,ContainerText} from './ListCarsElements'
-import {BtnCard} from '../Button'
+import Button from '../Button'
 import {ParagraphSection,TitleSection,TitleCard,ParagraphCard,Span,Small,SectionTitle} from '../Text'
 
 //import api from '../../services/api'
@@ -48,7 +48,8 @@ const ListCars = ({props,children}) => {
             .map(cars =>{
 
               return(
-                <CardItem key={cars.id} cars={cars}>
+                <CardItem key={cars.id} cars={cars} whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 1.1 }}>
                   <ContainerText>
                   <TitleCard>{cars.brand}</TitleCard>
                   <ParagraphCard>{cars.name}</ParagraphCard>
@@ -59,7 +60,7 @@ const ListCars = ({props,children}) => {
             <CardContent>
               <Span>R$ {cars.value},00<Small>/Hora</Small></Span>
             </CardContent>
-              <BtnCard to={`/car/${cars.id}`}>Alugar</BtnCard>
+              <Button to={`/car/${cars.id}`} variant='secondary' >Alugar</Button>
             </CardItem>
               )
             })}

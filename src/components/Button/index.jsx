@@ -1,9 +1,24 @@
 import styled from 'styled-components'
 import {Link as LinkR} from 'react-router-dom'
 //import {Link as LinkS} from 'react-scroll'
-import {primaryDarkColor,detailColor,textColor} from '../../style/Colors'
+import {detailColor,textColor} from '../../style/Colors'
 
-export const Button = styled(LinkR)`
+const handleVariant = (variant) => {
+    switch (variant) {
+    case 'primary':
+      return `color: ${textColor}; background-color: ${detailColor}`
+       
+      case 'secondary':
+      return `color: ${textColor}; background-color: ${detailColor}; width: 88%; margin:0 auto;`;
+        
+      default:
+      return `color: ${textColor}; background-color: ${detailColor}`
+    }
+  };
+
+
+
+ const Btn = styled(LinkR)`
 background: ${detailColor};
 color: ${textColor};
 border: none;
@@ -17,56 +32,26 @@ font-size: 1.1em;
 text-decoration:none;
 outline: none;
 text-align: center;
+${({ variant }) => handleVariant(variant)}
 
 
 &:hover{
-color: ${detailColor};
-background: transparent;
-
+color: ${(props) => (props.variant === 'primary' ? `${detailColor}` : `${detailColor}`)};;
+background: ${props => (props.variant === 'primary' ? 'transparent' : 'transparent')};
+font-weight: ${props => (props.variant === 'primary' ? 500 : 500)};
 
 
 }    
 `;
 
-export const BtnCard = styled(Button)`
-    width: 80%;
-    margin:0 auto
-
-`;
 
 
-export const BtnInput = styled.button`
-    width: 150px;
-    height: 50px;
-    border-radius:  0 4px 4px 0;
-    border: none;
-    background-color: ${detailColor};
-    color: ${textColor} ;
-    font-weight: 400;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: 0.8s ease ;
-    &:hover{
-    background: ${primaryDarkColor} ;
-    color:${detailColor};
-    }
-`;
 
-export const BtnLogin = styled(LinkR)`
-    width: 60%;
-    margin: 20px auto;
-    height: 50px;
-    text-decoration: none;
-    color: ${textColor};
-    background-color: ${detailColor};
-    border-radius: 4px;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 1.4em;
-    transition: 0.8s ease ;
+const Button = ({variant,children}) => {
+    return (
+        <Btn variant={variant} type="submit"> 
+          {children}</Btn>
+    )
+}
 
-    &:hover{
-    color: ${detailColor};
-    background: transparent;
-    }
-`;
+export default Button
