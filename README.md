@@ -23,6 +23,7 @@ Rode na pasta maquinadobem ``` json-server data.json -p 3333```
 - Hooks
 - Axios
 - Json-server 
+- Framer Motion
 
 
  ---
